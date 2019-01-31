@@ -16,61 +16,69 @@
 		div.mainGrid 
 		{
 			display: grid;
-			margin-left:10em;
+			
 			grid-gap: 1em;
-			/*grid-template-columns: 2fr 0fr; padding: 1em;
-			grid-template-rows: 100px 50px;*/
+			
 			grid-template-areas: 
 				'MainHeader' 'SecondHeader' 'ThirdHeader' 
 				'IntroductionText' 'Alignment' 'HitDice' 
 				'StartingWealth' 'ClassSkills' 'ClassSkillsText' 
-				'SkillRanksPerLevel' 'TableAlchemist' 'TableAlchemistTable';
+				'SkillRanksPerLevel' 'TableAlchemist' 'TableAlchemistTable'
+				'ClassFeatures' 'Proficiencies' 'Alchemy'
+				'Bombs' 'IndexBox';
 			font-family:'Times New Roman', Times, serif;
-			/*height: 100vh;
-			width: 100vw;*/
+			
 		}
 
-		div.MainHeader 
-		{
+		div.MainHeader {
 			/*color: cadetblue;*/
-			background-color: burlywood;
+			background-color:cornflowerblue;
 			grid-area: MainHeader;
-			text-anchor:start;
-
+			text-anchor: start;
+			margin-left: 10em;
 		}
 
 		div.SecondHeader {
-			/*background-color:#ddd;*/
+			background-color:forestgreen;
 			grid-area: SecondHeader;
+			margin-left: 10em;
 		}
 
 		.ThirdHeader {
 			/*background-color:#eee;*/
 			grid-area: ThirdHeader;
 			margin-right: auto;
+			margin-left: 10em;
 		}
 
-		.IntroductionText {
+		.IntroductionText 
+		{
 			grid-area: IntroductionText;
 			grid-row: 3;
-			margin-left: 7em;
+			margin-left: 17em;
 			margin-top:1.3em;
 			/*background-color: aqua;*/
 		}
-		.Alignment {
+		.Alignment 
+		{
 			grid-area: Alignment;
 			/*background-color:dimgray;*/
 			grid-row: 4;
+			margin-left: 10em;
 		}
-		.HitDice {
+		.HitDice 
+		{
 			grid-area: HitDice;
+			margin-left: 10em;
 			/*background-color:gray;*/
 		}
 		.StartingWealth {
+			margin-left: 10em;
 			grid-area: StartingWealth;
 			/*background-color:dimgrey;*/
 		}
 		.ClassSkills {
+			margin-left: 10em;
 			grid-area: ClassSkills;
 			/*background-color:grey;*/
 			margin-right: auto;
@@ -78,20 +86,23 @@
 		.ClassSkillsText {
 			grid-area: ClassSkillsText;
 			/*background-color:dimgrey;*/
-			margin-left: 7em;
+			margin-left: 17em;
 			margin-right: 40em;
 			margin-top:1.3em;
 			grid-row: 8/9;
 		}
 		.SkillRanksPerLevel {
+			margin-left: 10em;
 			grid-area: SkillRanksPerLevel;
 			/*background-color:gray;*/
 		}
 		.TableAlchemist {
+			margin-left: 10em;
 			grid-area: TableAlchemist;
 			/*background-color:dimgrey;*/
 		}
 		.TableAlchemistTable {
+			margin-left: 10em;
 			grid-area: TableAlchemistTable;
 			/*background-color:dimgrey;*/
 		}
@@ -100,6 +111,37 @@
 				object-fit:cover;
 				width:100%;
 			}
+		.ClassFeatures 
+		{
+			grid-area:ClassFeatures;
+			
+			margin-left:10em;
+		}
+		.Proficiencies 
+		{
+			grid-area:Proficiencies;
+			
+			margin-left:10em;
+		}
+		.Alchemy 
+		{
+			grid-area:Alchemy;
+			
+			margin-left:10em;
+			padding:0;
+		}
+		.Bombs 
+		{
+			grid-area:Bombs;
+			margin-left:10em;
+		}
+		.IndexBox {
+			grid-area: IndexBox;
+			background-color: cornflowerblue;
+			grid-row-start: 1;
+			grid-row-end: span;
+			margin-right: 84.92em;
+		}
 	</style>
 </head>
 <body>
@@ -128,13 +170,13 @@
 			</h3>
 		</div>
 		<div class="HitDice">
-			<h3 >
+			<h3>
 				Hit Dice:<em> d8</em>
 			</h3>
 		</div>
 		<div class="StartingWealth">
 			<h3>
-				Starting Wealth:<em> 3d6 x 10gp (average 105gp.) in addition, each character starts out with an outfit worth up to 10gp or less.</em>
+				Starting Wealth:<em> 3d6 x 10gp (average 105gp.)<br /> in addition, each character starts out with an outfit worth up to 10gp or less.</em>
 			</h3>
 		</div>
 		<div class="ClassSkills">
@@ -160,6 +202,104 @@
 		</div>
 		<div class="TableAlchemistTable">
 			<img src="TableAlchemist.png" alt="Alchemist Table" />
+		</div>
+		<div class="ClassFeatures">
+			<h3>
+				Class Features<br />
+				<em>the following are class features of the Alchemist.</em>
+			</h3>
+		</div>
+		<div class="Proficiencies">
+			<h3>
+				Weapon and Armor proficiency<br />
+				<em>Alchemists are proficient with all simple weapons and bombs.<br />
+				They are also proficient with light armor, but not with shields.</em>
+			</h3>
+		</div>
+		<div class="Alchemy">
+			<h3>
+				Alchemy (Ex)
+			</h3>
+			
+			<p>
+				Alchemists are masters of creating alchemical substances such as alchemist’s fire,
+				smokesticks as well as other alchemical extracts, but the reason he is a true master of potion crafting,
+				is his ability to craft extraordinary amounts of potions, poisons, oils and alchemical items in a single hour
+				at a fourth of the cost rounded up to the nearest copper worth of raw materials.<br /><br />
+
+				An Alchemist usually prepares his Extracts at the beginning of his day,
+				and may create any number of his daily allotment of extracts that he is able to craft without having to take a craft (alchemy) check.
+				This process takes 1 hour regardless of how many extracts he creates this is due to the fact that the creation process takes one hour regardless of the amount he makes.
+				The Alchemist starts play with a Lab, alchemist’s (portable), and may create his extracts as long as he has access to it or an equivalent set of items.
+				He may not prepare extracts without such items.<br /><br />
+
+				When using Craft (alchemy) to create a potion,
+				poison, oil or alchemical item, an alchemist gains a competence bonus equal to his class level on the Craft (alchemy) check.
+				In addition, an alchemist can use Craft (alchemy) to identify potions.
+				He must hold the potion for 1 round to make such a check.
+				The Difficulty Challenge of such a check is the same as the crafting check to make the potion in question.<br /><br />
+
+				An alchemist can create three special types of items—extracts, bombs, and mutagens
+				are transformative elixirs that the Alchemist drinks to enhance his physical
+				abilities—both of these are detailed in their own sections below.<br /><br />
+
+				Extracts is essentially normal potions, poisons, oils and alchemical items
+				but is segregated under the name of extracts to avoid confusion when determining
+				how many of these you may create under the special rules mentioned above.
+				The difference between a potion created as an extract and a potion created with craft(alchemy)
+				is the expiration date which is further detailed below.<br /><br />
+
+				An alchemist can create only a certain number of extracts of each level per day.
+				His base daily allotment of extracts is given on Table: Alchemist.
+				In addition, he receives bonus extracts per day if he has a high Intelligence score,
+				in the same way a wizard receives bonus spells per day.
+				Since extracts are hastily made versions of themselves they deteriorate and expire at
+				a much faster rate than an equivalent crafted using craft(alchemy).
+				A potion extract is potent for 1 day, during the second day there is a 75% chance for the potion extract to function as normal,
+				otherwise the potion extract will cause mild drowsiness.
+				On the third day the potion extract is inert and will have lost its potency completely.
+				Poisons, oils or Alchemical item extracts, expire after 1 day.<br /><br />
+
+				Extracts that the Alchemist does not use during the day and expires may be re-prepared the next day at no materials cost,
+				the extracts re-prepared in this way still consumes slots from the daily allotment of extracts.
+				An Alchemist has a formulae list which he carries around wherever he travels,
+				this list also determines what extracts he may create.
+				The alchemist uses his level as the caster level to determine any effect based on caster level.
+				An Alchemist may prepare any extract from his formulae list as long as the formulae is of a level the alchemist is able to create,
+				which is determined by Table: Alchemist.
+				To learn or prepare an extract,
+				an alchemist must have an Intelligence score equal to at least 10 + the extract’s level.<br /><br />
+
+				The Difficulty Class for a saving throw against an alchemist’s extract is 10 + the extract level + the alchemist’s Intelligence modifier.
+				An alchemist may know any number of formulae. He stores his formulae in writing,
+				whether that is a scroll or a book or a stone tablet is up to him but he must have his formulae in writing,
+				and must refer to it when creating an extract. An alchemist begins play with two 1st level formulae of his choice,
+				plus a number of additional formulae equal to his Intelligence modifier. At each new alchemist level,
+				he gains one new formula of any level that he can create plus a number of additional formulae equal to
+				his intelligence modifier that must match the same requirements.<br /><br />
+
+				An Alchemists formulae's can't be learned by a wizard and a wizards spells can't be learned by an Alchemist.
+			</p>
+		</div>
+		<div class="Bombs">
+			<h3>
+				Bomb(Ex)
+			</h3>
+			<p>
+				In addition to extracts, alchemists are experts at mixing unstable pyrotechnical alchemical components with explosive results.
+				The bombs are made from alchemical components that in its prepared state is unstable and subject to spontaneous combustion or worse,
+				but in the hands of an alchemist is as safe as can be.
+				These components are funneled into a form shaped like a ball where the components crystallize into a somewhat transparent crystal ball,
+				comparable in scale to a baseball. This crystal ball is colorless and half transparent with visible internal cracking,
+				but as the alchemist masters this craft the crystal ball will become less foggy and more clear and transparent with less cracks,
+				if the bombs are altered with some elemental components the ball will be colored. 
+				Each element has its own color acid for example would make the crystal ball green.<br /><br />
+
+
+			</p>
+		</div>
+		<div class="IndexBox">
+			placeholder
 		</div>
 	</div>
 
