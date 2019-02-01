@@ -25,7 +25,11 @@
 				'StartingWealth' 'ClassSkills' 'ClassSkillsText' 
 				'SkillRanksPerLevel' 'TableAlchemist' 'TableAlchemistTable'
 				'ClassFeatures' 'Proficiencies' 'Alchemy'
-				'Bombs' 'IndexBox';
+				'Bombs' 'BrewPotion' 'Mutagen'
+				'ThrowAnything' 'Discovery' 'PoisonResistance' 
+				'PoisonUse' 'SwiftAlchemy' 'SwiftPoisoning' 
+				'PersistantMutagen' 'InstantAlchemy' 
+				'GrandDiscovery' 'AlchemistPhoto' 'IndexBox';
 			font-family:'Times New Roman', Times, serif;
 			
 		}
@@ -45,7 +49,6 @@
 		}
 
 		.ThirdHeader {
-			/*background-color:#eee;*/
 			grid-area: ThirdHeader;
 			margin-right: auto;
 			margin-left: 10em;
@@ -57,35 +60,33 @@
 			grid-row: 3;
 			margin-left: 17em;
 			margin-top:1.3em;
-			/*background-color: aqua;*/
 		}
 		.Alignment 
 		{
 			grid-area: Alignment;
-			/*background-color:dimgray;*/
 			grid-row: 4;
 			margin-left: 10em;
+			margin-right:40em;
 		}
 		.HitDice 
 		{
 			grid-area: HitDice;
 			margin-left: 10em;
-			/*background-color:gray;*/
+			margin-right:40em;
 		}
 		.StartingWealth {
 			margin-left: 10em;
+			margin-right:40em;
 			grid-area: StartingWealth;
-			/*background-color:dimgrey;*/
 		}
 		.ClassSkills {
 			margin-left: 10em;
+			margin-right: 40em;
 			grid-area: ClassSkills;
-			/*background-color:grey;*/
 			margin-right: auto;
 		}
 		.ClassSkillsText {
 			grid-area: ClassSkillsText;
-			/*background-color:dimgrey;*/
 			margin-left: 17em;
 			margin-right: 40em;
 			margin-top:1.3em;
@@ -93,18 +94,17 @@
 		}
 		.SkillRanksPerLevel {
 			margin-left: 10em;
+			margin-right: 40em;
 			grid-area: SkillRanksPerLevel;
-			/*background-color:gray;*/
 		}
 		.TableAlchemist {
 			margin-left: 10em;
+			margin-right: 40em;
 			grid-area: TableAlchemist;
-			/*background-color:dimgrey;*/
 		}
 		.TableAlchemistTable {
 			margin-left: 10em;
 			grid-area: TableAlchemistTable;
-			/*background-color:dimgrey;*/
 		}
 			.TableAlchemistTable > img 
 			{
@@ -135,6 +135,70 @@
 			grid-area:Bombs;
 			margin-left:10em;
 		}
+		.BrewPotion 
+		{
+			grid-area:BrewPotion;
+			margin-left:10em;
+		}
+		.Mutagen 
+		{
+			grid-area:Mutagen;
+			margin-left:10em;
+		}
+		.ThrowAnything 
+		{
+			grid-area:ThrowAnything;
+			margin-left:10em;
+		}
+		.Discovery {
+			grid-area: Discovery;
+			margin-left: 10em;
+		}
+		.PoisonResistance 
+		{
+			grid-area:PoisonResistance;
+			margin-left:10em;
+		}
+		.PoisonUse 
+		{
+			grid-area:PoisonUse;
+			margin-left:10em;
+		}
+		.SwiftAlchemy 
+		{
+			grid-area:SwiftAlchemy;
+			margin-left:10em;
+		}
+		.SwiftPoisoning 
+		{
+			grid-area:SwiftPoisoning;
+			margin-left:10em;
+		}
+		.PersistantMutagen {
+			grid-area:PersistantMutagen;
+			margin-left: 10em;
+		}
+		.InstantAlchemy {
+			grid-area:InstantAlchemy;
+			margin-left: 10em;
+		}
+		.GrandDiscovery 
+		{
+			grid-area:GrandDiscovery;
+			margin-left:10em;
+		}
+		.AlchemistPhoto 
+		{
+			grid-area:AlchemistPhoto;
+			margin-left:60em;
+			grid-row:4/12;
+			
+		}
+			.AlchemistPhoto > img 
+			{
+				object-fit: cover;
+				width: 45%;
+			}
 		.IndexBox {
 			grid-area: IndexBox;
 			background-color: cornflowerblue;
@@ -201,7 +265,7 @@
 			</h3>
 		</div>
 		<div class="TableAlchemistTable">
-			<img src="TableAlchemist.png" alt="Alchemist Table" />
+			<img src="Table2.png" alt="Alchemist Table" />
 		</div>
 		<div class="ClassFeatures">
 			<h3>
@@ -218,7 +282,7 @@
 		</div>
 		<div class="Alchemy">
 			<h3>
-				Alchemy (Ex)
+				Alchemy<sup>(Ex)</sup>
 			</h3>
 			
 			<p>
@@ -283,7 +347,7 @@
 		</div>
 		<div class="Bombs">
 			<h3>
-				Bomb(Ex)
+				Bomb<sup>(Ex)</sup>
 			</h3>
 			<p>
 				In addition to extracts, alchemists are experts at mixing unstable pyrotechnical alchemical components with explosive results.
@@ -292,11 +356,241 @@
 				These components are funneled into a form shaped like a ball where the components crystallize into a somewhat transparent crystal ball,
 				comparable in scale to a baseball. This crystal ball is colorless and half transparent with visible internal cracking,
 				but as the alchemist masters this craft the crystal ball will become less foggy and more clear and transparent with less cracks,
-				if the bombs are altered with some elemental components the ball will be colored. 
+				if the bombs are altered with some elemental components the ball will be colored.
 				Each element has its own color acid for example would make the crystal ball green.<br /><br />
 
+				An alchemist can craft a number of bombs each day equal to his class level + his intelligence modifier,
+				an alchemist usually crafts his bombs at the beginning of the day when he prepares his extracts.
+				A bomb once stabilized remains in this state for 1 day before crumbling and the components rendered inert.
+				The material costs of making a bomb is 1 gold piece per damage dice it inflicts.
+				The time required to make these bombs is 1 hour regardless of quantity made since the alchemist requires deep concentration to mix the ingredients.<br /><br />
 
+				Drawing and throwing a bomb requires a standard action that provokes an attack of opportunity.
+				Thrown bombs have a range of 20 feet and counts as a ranged touch attack.
+				Bombs are considered weapons and can be selected using feats such as Point-Blank Shot and Weapon Focus.
+				An alchemists bomb inflicts 1d6 points of fire damage + additional damage equal to the alchemists intelligence modifier with a 5 foot splash radius.
+				The damage of an alchemist’s bomb increases by 1d6 points at every odd-numbered alchemist level (this bonus damage is not multiplied on a critical hit or by using feats such as Vital Strike).
+				Those caught within the bombs range can attempt a Reflex save for half damage.
+				The DC of this save  is equal to 10 + 1/2 the alchemist’s level + the alchemist’s Intelligence modifier.
+				Choosing to save from this damage forces you prone.<br /><br />
+
+				If the alchemist chooses to throw the bomb at a creature instead of a square and successfully hits the target,
+				then that creature does not receive the Reflex save mentioned above.
+				Alchemists can learn new types of bombs as discoveries (see the Discovery ability) as they level up.
 			</p>
+		</div>
+		<div class="BrewPotion">
+			<h3>
+				Brew Potion<sup>(Ex)</sup>
+			</h3>
+			<p>
+				At 1st level, alchemists can brew potions, poisons, oils or craft an alchemical item of any formulae he knows using his alchemist level as his caster level.
+				He does this using craft(alchemy) at the normal components cost for crafting (1/3 base price),
+				when calculating how much time the crafting process requires the minimum time required is 1 hour but crafting in this manner may require longer.
+				Using craft(alchemy) requires use of a lab same as extracts.
+			</p>
+		</div>
+		<div class="Mutagen">
+			<h3>
+				Mutagen<sup>(Ex)</sup>
+			</h3>
+			<p>
+				At 1st level, an alchemist discovers how to create a mutagen that he can craft from monster parts
+				as the main ingredient in order to heighten his physical prowess at the cost of his personality.
+				It takes 1 hour to brew a dose of mutagen, and once brewed, it remains potent for 1 week.<br />
+				When an alchemist brews a mutagen, he selects one physical ability score—either Strength, Dexterity, or Constitution.
+				Each of these scores have a different main ingredient that corresponds with the desired effect.
+				It’s a standard action to drink a mutagen for non-alchemists and a move action for an alchemist.
+				Upon being consumed, the mutagen causes the alchemist to grow bulkier and more bestial, taking on an appearance with similarities to the one the main ingredient originated from.
+				This grants him a +2 natural armor bonus and a +4 alchemical bonus to the selected ability score for 10 minutes per alchemist level.
+				In addition, while the mutagen is in effect, the alchemist takes a –2 penalty to one of his mental ability scores.
+				If the mutagen enhances his Strength, it applies a penalty to his Intelligence.
+				If it enhances his Dexterity, it applies a penalty to his Wisdom.
+				If it enhances his Constitution, it applies a penalty to his Charisma.<br /><br />
+
+				Muscle tissue from a giant is used to enhance strength,
+				tendons from dark folk is used to enhance dexterity,
+				powdered bone dust from a troll is used to enhance constitution.
+				If someone were to consume a mutagen while already being under the effects of a mutagen
+				the person must then make a Fortitude save (DC 10 + 1/2 the alchemists level + the alchemists intelligence modifier)
+				if he succeeds he will immediately puke which provokes an attack of opportunity and he is considered flat footed,
+				after puking both mutagens effects immediately ends.<br /><br />
+
+				If he should fail then he suffers from the confused condition for the remaining duration of the first mutagen he consumed,
+				when the duration of the mutagen ends so does the confusion.
+				Once a minute he may attempt to retry the Fortitude save if successful he will go from being confused
+				to suffering the panicked condition for 10 minutes before suffering the unconscious condition for 1 minute.
+				During this minute of unconsciousness the monster like appearance recedes and his appearance returns to normal
+				in addition the effects of the mutagens ends.
+				After that minute is up he wakes up with a mild headache in addition to mild memory loss
+				that starts from the beginning of confusion until waking up now,
+				the mild memory loss is only bits and pieces here and there not the entire experience.
+			</p>
+		</div>
+		<div class="ThrowAnything">
+			<h3>
+				Throw Anything<sup>(Ex)</sup>
+			</h3>
+			<p>
+				All alchemists gain the Throw Anything feat as a bonus feat at 1st level.
+				An alchemist adds his Intelligence modifier to damage done with splash weapons,
+				including the splash damage if any. This bonus damage is already included in the bomb class feature.
+			</p>
+		</div>
+		<div class="Discovery">
+			<h3>
+				Discovery<sup>(Ex)</sup>
+			</h3>
+			<p>
+				At 2nd level, and then again every 2 levels thereafter (up to 18th level),
+				an alchemist makes an incredible alchemical discovery.
+				Unless otherwise noted, an alchemist cannot select an individual discovery more than once.
+				Some discoveries can only be made if the alchemist has met certain prerequisites first, such as uncovering other discoveries.
+				Discoveries that modify bombs that are marked with an asterisk (*) do not stack. Only one such discovery can be applied to an individual bomb.
+				The DC of any saving throw called for by a discovery is equal to 10 + 1/2 the alchemist’s level + the alchemist’s Intelligence modifier.
+			</p>
+			<h4>
+				Alchemist Discovery List:
+			</h4>
+			<ul>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/acid-bomb/">Acid Bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/bitter-pill-su/">Bitter pill</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/blinding-bomb-su/">Blinding bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/bottled-ooze-su/">Bottled ooze</a></li>
+				<li><a href="https://www.d20pfsrd.com/races/other-races/uncommon-races/arg-grippli/bogborn-alchemist-alchemist-grippli/chameleon-su/">Chameleon</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/cognatogen-su/">Cognatogen</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/combine-extracts/">Combine extracts</a>(but only of the same category)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/concentrate-poison/">Concentrate Poison</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/concussive-bomb/">Concussive bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/confusion-bomb-su/">Confusion bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/cytillesh-bomb/">cytillesh bomb</a>(*)</li>
+				<li><a href="https://www.d20pfsrd.com/races/core-races/half-elf/bramble-brewer-alchemist-half-elf/defoliant-bomb/">Defoliant bomb</a>(*)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/delayed-bomb/">Delayed bomb</a>(delay is decided upon crafting not use)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/dilution/">Dilution</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/directed-bomb/">Directed bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/explosive-bomb/">Explosive bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/extend-potion/">Extend potions</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/eternal-potion/">Eternal potion</a>(but only lasts 1 day)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/fast-bombs/">Fast bombs</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/feral-mutagen/">Feral mutagen</a>(requires a ground up tooth or claw from a predatorial creature)</li>
+				<li><a href="https://www.d20pfsrd.com/races/other-races/uncommon-races/arg-svirfneblin/deep-bomber-alchemist-svirfneblin/glassfoot-bomb/">Glassfoot bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/grand-cognatogen-su/">Grand cognaotgen</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/grand-mutagen/">Grand Mutagen</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/grease-bomb/">Grease bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/smoke-bomb/">Smoke bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/plague-bomb-su/">Plague bomb</a>(you need a sample of something infected with the contagion)</li>
+				<li><a href="https://www.d20pfsrd.com/races/other-races/featured-races/arg-ratfolk/plague-bringer-alchemist-ratfolk/greater-plague-bomb/">Greater plague bomb</a>(previous side note) (you dont need magic to cure)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/greater-cognatogen-su/">Greater Cognatogen</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/greater-mutagen/">Greater mutagen</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/grounding-goo-su/">Grounding goo</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/immolation-bomb/">Immolation bomb</a>(this bomb deals 1d6+modifier damage per round. the number of rounds is equal to the amount of dice the alchemists bomb would normally deal.)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/malignant-poison/">Malignant poison</a>(onset time is halved to the minimum of a full round)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/nauseating-flesh/">Nauseating flesh</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/ooze-blight/">Ooze Blight</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/pheromones-su/">Pheromones</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/pickled-quasit/">Pickled Quasit</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/alternate-classes/ninja/ninja-tricks/paizo-ninja-tricks/poison-bomb/">Poison Bomb</a>(except this is a bomb where you infuse a dose of contact poison in the bomb in addition to its normal damage)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/poison-bomb/">Poison Bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/purging-mutagen/">Purging Mutagen</a>(requires a sample of whatever ails you)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/remedy-extract/">Remedy Extract</a></li>
+				<li><a href="https://www.d20pfsrd.com/races/other-races/featured-races/arg-goblin/fire-bomber-alchemist-goblin/scrap-bomb-su/">Scrap bomb</a>(no goblin prerequisite) (prerequisite: alchemist 4)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/siege-bomb/">Siege Bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/solid-ground-su/">Solid Ground</a>(affects any stillstanding surface)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/sticky-poison/">Sticky poison</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/stink-bomb/">Stink bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/sunlight-bomb-su/">Sunlight bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/tanglefoot-bomb-su/">Tanglefoot bomb</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/tentacle-ex/">Tentacle</a>(requires a dried suction cup)</li>
+				<li><a href="https://www.d20pfsrd.com/races/other-races/uncommon-races/arg-grippli/bogborn-alchemist-alchemist-grippli/underwater-demolition-ex/">Underwater demolition</a>(Requires alchemist 4)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/vestigial-arm-ex/">Vestigial arm</a>(requires a dried finger from a humanoid creature) (the arm will have visual but no effectual similiarities from the creature the finger originated from)</li>
+				<li> <a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-discoveries/wings-ex/">Wings</a>(requires the talon from a bird creature) (the wingflesh of a humanoid winged creature also works as a substitute)</li>
+			</ul>
+		</div>
+		<div class="PoisonResistance">
+			<h3>
+				Poison Resistance<sup>(Ex)</sup>
+			</h3>
+			<p>
+				At 2nd level, an alchemist gains a +2 bonus on all saving throws against poison.
+				This bonus increases to +4 at 5th level, and then again to +6 at 8th level.
+				At 10th level, an alchemist becomes completely immune to poison.
+			</p>
+		</div>
+		<div class="PoisonUse">
+			<h3>
+				Poison Use<sup>(Ex)</sup>
+			</h3>
+			<p>
+				Alchemists are experienced in the use of poison and starting at 2nd level,
+				cannot accidentally poison themselves when applying poison to a weapon.
+			</p>
+		</div>
+		<div class="SwiftAlchemy">
+			<h3>
+				Swift Alchemy<sup>(Ex)</sup>
+			</h3>
+			<p>
+				At 3rd level, an alchemist can create alchemical items at an even more astounding speed.
+				It takes an alchemist half the normal amount of time to create alchemical items,
+				and he can apply poison to a weapon as a move action.
+				This alters the time it takes to prepare extracts to 30 minutes instead of 1 hour,
+				and alters the minimum craft(alchemy) time to 30 minutes as well as the time required to craft bombs down to 30 minutes.
+			</p>
+		</div>
+		<div class="SwiftPoisoning">
+			<h3>
+				Swift Poisoning<sup>(Ex)</sup>
+			</h3>
+			<p>
+				At 6th level, an alchemist can apply a dose of poison to a weapon as a swift action.
+			</p>
+		</div>
+		<div class="PersistantMutagen">
+			<h3>
+				Persistent Mutagen<sup>(Ex)</sup>
+			</h3>
+			<p>
+				At 14th level, the effects of a mutagen last for 1 hour per level.
+			</p>
+		</div>
+		<div class="InstantAlchemy">
+			<h3>
+				Instant Alchemy<sup>(Ex)</sup>
+			</h3>
+			<p>
+				At 18th level, an alchemist can create alchemical items with almost supernatural speed.
+				The use of Craft(alchemy) takes only minimum 5 minutes now in addition the crafting time
+				required to create an item is halved again reducing it to 1/4 of the original time it would normally require.
+				He is also able to reduce the time it takes to prepare extracts and bombs to 5 minutes. When he uses Craft(alchemy)
+				he must still succeed at the Craft (alchemy) check and must have the appropriate resources at hand to fund the creation.
+				He can apply poison to a weapon as an immediate action.
+			</p>
+		</div>
+		<div class="GrandDiscovery">
+			<h3>
+				Grand Discovery<sup>(Ex)</sup>
+			</h3>
+			<p>
+				At 20th level, the alchemist makes a grand discovery.
+				He immediately learns two normal discoveries,
+				but also learns a third discovery chosen from the linked list below,
+				representing a truly astounding alchemical breakthrough of significant import.
+				For many alchemists,
+				the promise of one of these grand discoveries is the primary goal of their experiments and hard work.
+			</p>
+			<h4>
+				Grand Discoveries List:
+			</h4>
+			<ul>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-grand-discoveries/awakened-intellect/">Awakened Intellect</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-grand-discoveries/eternal-youth/">Eternal youth</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-grand-discoveries/fast-healing/">Fast Healing</a>(requires you to eat a fried devil)</li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-grand-discoveries/philosopher-s-stone/">Philosophers stone</a></li>
+				<li><a href="https://www.d20pfsrd.com/classes/base-classes/alchemist/discoveries/paizo-alchemist-grand-discoveries/true-mutagen/">True Mutagen</a></li>
+			</ul>
+		</div>
+		<div class="AlchemistPhoto">
+			<img src="AlchemistPhoto.jpg" alt="AlchemistPhoto" />
 		</div>
 		<div class="IndexBox">
 			placeholder
